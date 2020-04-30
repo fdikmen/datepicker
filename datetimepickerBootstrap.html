@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+    <title>Hello, world!</title>
+
+    <style>
+      
+
+    /*#region Calendar Field*/
+    /*BEGIN*********************************Calendar Field **************************************************/
+
+    #divPopupCalendar .table-condensed {
+        margin: auto !important;
+    }
+
+    #divPopupCalendar .datepicker-inline {
+        width: 100%;
+    }
+
+    #divPopupCalendar .datepicker-days thead tr:last-child {
+        border-bottom: 1px dotted black;
+    }
+
+    #divPopupCalendar td.day {
+        padding: 6.5px 16px 6.5px 16px;
+    }
+
+    #divPopupCalendar td {
+        padding: 6.5px 16px 6.5px 16px;
+    }
+
+        #divPopupCalendar td.day.selected {
+            background-color:#f2f1f1 !important;
+            background-image: linear-gradient(to bottom, #f2f1f1, #f2f1f1) !important;
+            color: #222222;
+        }
+@media only screen and (max-width: 767px) {
+    #divPopupCalendar td.day {
+            padding: 3.25px 4px 3.25px 4px;
+        }
+    }
+
+    #divPopupCalendarRadio .form-check {
+        line-height: 2;
+    }
+
+
+    #divPopupCalendarRadio input[type="radio"] {
+        display: none;
+    }
+
+        #divPopupCalendarRadio input[type="radio"] + label::before {
+            margin-top: 7.5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: white;
+            border: 0.5px solid #222;
+            display: block;
+            content: "";
+            float: left;
+            margin-right: 12px;
+        }
+
+        #divPopupCalendarRadio input[type="radio"]:checked + label::before {
+            background-color: #222;
+            border: 0.5px solid #222;
+        }
+
+    /*Design*/
+        #divPopupCalendar .datepicker table tr td span {
+        width: 30%;
+        /*height: 50px;
+                        line-height: 50px;*/
+        float: left;
+        margin: 0%;
+        cursor: pointer;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+    }
+
+    #divPopupCalendar .datepicker span.year.active.focused {
+        background-image: linear-gradient(to bottom, #222, #222);
+    }
+
+        #divPopupCalendar .datepicker span.year.active.focused:hover {
+            background-image: linear-gradient(to bottom, #cc2222, #cc2222);
+        }
+
+    #divPopupCalendar .datepicker span.month.active {
+        background-image: linear-gradient(to bottom, #222, #222);
+    }
+
+        #divPopupCalendar .datepicker span.month.active:hover {
+            background-image: linear-gradient(to bottom, #cc2222, #cc2222);
+        }
+
+    #divPopupCalendar .datepicker table tr td {
+        border-radius: 0;
+    }
+
+        #divPopupCalendar .datepicker table tr td.active {
+            background-image: linear-gradient(to bottom, #222, #222);
+        }
+
+            #divPopupCalendar .datepicker table tr td.active:hover {
+                background-image: linear-gradient(to bottom, #cc2222, #cc2222);
+            }
+
+    #divPopupCalendar .datepicker .active.disabled.disabled-date.day {
+        background-image: linear-gradient(to bottom, #cc2222, #cc2222);
+    }
+
+    #divPopupCalendar .datepicker table tr td.today {
+        background-color: #222222;
+        background-image: none;
+        color: white;
+    }
+
+        #divPopupCalendar .datepicker table tr td.today.active.day {
+            /*border: -0.1px solid #222;*/
+            background-color: white;
+            background-image: none;
+            color: #cc2222;
+        }
+
+@media only screen and (max-width: 767px) {
+    #divPopupCalendarRadio .form-check {
+        line-height: 1.25; /*Mobilde today/this week Radio butonlarının arasının azaltılması talep edildi.*/
+    }
+
+    #divPopupCalendarRadio input[type="radio"] + label::before {
+        margin-top: 1px; /*Mobilde today/this week Radio butonlarının arasının azaltılması talep edildi.*/
+    }
+}
+
+    /*END--*********************************Calendar Field **************************************************/
+    /*#endregion */
+
+    </style>
+  </head>
+  <body>
+   
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mx-5 my-5">
+      <h1 class="d-block" >Hello, FIRAT!</h1>
+      <div class="d-block" id="divPopupCalendar"></div>
+    </div>
+  </div>
+</div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="locales/bootstrap-datepicker.tr.min.js"></script>
+  <script src="https://momentjs.com/downloads/moment.min.js"></script>
+  <script>
+    /*BEGIN CALENDAR*/
+$('#divPopupCalendar').datepicker({
+    format: "dd/mm/yyyy",
+    weekStart: 1,
+    language: "tr",
+    multidate: true, showButtonPanel: true,
+    maxViewMode: 2,
+    daysOfWeekDisabled: "1",//Müzeler Pazartesileri Kapalı
+	startDate: new Date("2010"),
+	endDate: new Date((new Date().getFullYear()+10).toString()),
+    //orientation: "top auto",
+    //todayHighlight: true,
+    //beforeShowDay: function (date) {
+    //    if (date.getMonth() == (new Date()).getMonth())
+    //       switch (date.getDate()) {
+    //        case 4:
+    //            return {
+    //                tooltip: 'Example tooltip',
+    //                classes: 'active'
+    //            };
+    //        case 8:
+    //            return false;
+    //        case 12:
+    //            return "green";
+    //        }
+    //},
+}).on('changeDate', function (ev) {
+    //test=ev;
+    var date = ev.date;
+   // console.log(date.getDate());
+
+    //$('.slides img[data-slide=' + slide + ']').addClass("selected");
+
+   
+
+
+    //$(this).datepicker("refresh");
+
+    if (ev.dates.length > 2) {
+        $(this).datepicker('setDate',ev.date);
+    }
+    else if (ev.dates.length==2) {
+        //test = (ev);
+        var first = ev.dates[0];
+        var second = ev.dates[1];
+
+        var a = moment(first);
+        var b = moment(second);
+       // a.diff(b) // -1000-->geriye
+       // b.diff(a) // 1000
+
+       // console.log(a.diff(b), b.diff(a));
+        var dates=enumerateDaysBetweenDates(first, second);
+        new Date("2020/04/29 03:00").getTime();
+
+        $.each(dates, function (index, value) {
+           // console.log(index + ": " + new Date(value).setHours(3));
+
+            $('td[data-date=' + new Date(value).setHours(3)+']').addClass("selected");
+        });
+    }
+    
+});
+
+var enumerateDaysBetweenDates = function (first, second) {
+    var dates = [];
+    var a = moment(first);
+    var b = moment(second);
+    var startDate;
+    var endDate;
+    if (a.diff(b) < 0)//--> b>a demek
+    {
+        startDate =a.startOf('day');
+        endDate = b.startOf('day');
+    } else {
+        startDate = b.startOf('day');
+        endDate = a.startOf('day');
+    }
+    while (startDate.add(1, 'days').diff(endDate) < 0) {
+        //console.log(startDate.toDate());
+        dates.push(startDate.clone().toDate());
+       }
+    //console.log(dates);
+    return dates;
+};
+
+
+$(function () { $('#divPopupCalendar').datepicker('setDate', new Date()); });
+
+$('#divPopupCalendar .next').html('<svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14"><path fill="#222" d="M6.011.512l.346-.346 6.662 6.488-6.662 6.49-.346-.347 6.316-6.143L6.01.512zm-5.602 0L.755.166l6.683 6.488-6.683 6.49-.346-.347 6.316-6.143L.409.512z"/></svg>');
+$('#divPopupCalendar .prev').html('<svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14"><path fill="#222" d="M6.989.512L6.643.166-.04 6.654l6.683 6.49.346-.347L.673 6.654 6.99.512zm5.58 0L6.275 6.654l6.294 6.143-.346.346-6.661-6.489L12.223.166l.346.346z"/></svg>');
+
+
+$("input[name='selectedDates']").change(function () {
+    console.log($(this).val());
+    var calendar = $('#divPopupCalendar');
+    switch ($(this).val()) {
+        case 'today':
+            calendar.datepicker('setDate', new Date());
+            break;
+        case 'tomorrow':
+
+            calendar.datepicker('setDate', new Date(moment().add(1, 'days').format()));// new Date(new Date().getTime() + 24 * 60 * 60 * 1000));
+            break;
+        case 'thisWeek':
+            getCurrentWeek($('#divPopupCalendar'));
+            break;
+        case 'thisWeekend':
+            calendar.datepicker('setDates', new Date(moment().day(6).format()), new Date(moment().day(6).add(1, 'days').format()));
+            break;
+        case 'thisMonth':
+            getMonthDateRange($('#divPopupCalendar'));
+            break;
+        default:
+        // code block
+    }
+});
+
+function getCurrentWeek(datePickElm) {
+    var days = [];
+    for (var i = 0; i < 7; i++) {
+        days.push(new Date(moment().clone().startOf('isoWeek').add(i, 'days')));
+    }
+    datePickElm.datepicker('setDates', days);
+}
+
+function getMonthDateRange(datePickElm) {
+    var endDay = moment().endOf('month').format("D");
+    var days = [];
+    for (var i = 0; i < endDay; i++) { days.push(new Date(moment().startOf('month').add(i, 'days'))); }
+    datePickElm.datepicker('setDates', days);
+}
+
+
+$("#calendarPopupBtnClear").click(function() {
+    $("#pcToday").prop('checked', true);
+    $('#divPopupCalendar').datepicker('setDate', new Date());
+
+    $("#allCategoriesField input[type='checkbox']").prop('checked', false);
+    $("#chckallCategories").prop('checked', false);
+
+
+    $("#allLocationsFiled div").removeClass("activeCategory");
+    $("#chckallLocations").prop('checked', false);
+});
+
+/*END CALENDAR*/
+  </script>
+  </body>
+</html>
