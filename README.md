@@ -1,6 +1,11 @@
 # datepicker
 Upgrade for bootstrap datepicker 
 
+
+The basic version of the codes is at https://github.com/uxsolutions/bootstrap-datepicker
+I am developing on the codes here.
+
+
 I created this project to make features that are not standard boostrap datepicker.
 
 What I do for now;
