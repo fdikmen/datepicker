@@ -195,40 +195,24 @@ $('#divPopupCalendar').datepicker({
     //        }
     //},
 }).on('changeDate', function (ev) {
-    //test=ev;
-    var date = ev.date;
-   // console.log(date.getDate());
-
-    //$('.slides img[data-slide=' + slide + ']').addClass("selected");
-
-   
-
-
-    //$(this).datepicker("refresh");
-
-    if (ev.dates.length > 2) {
+        var selected = ev.dates.length;
+    if (selected == 31 || selected == 30 || selected == 29) { }//Eğer tümünü seçim butonları kullanılmışsa
+    else if (selected == 7) { }//Eğer bu hafta seçim butonları kullanılmışsa
+    else if (selected > 2) {
         $(this).datepicker('setDate',ev.date);
     }
-    else if (ev.dates.length==2) {
-        //test = (ev);
+    else if (selected==2) {
         var first = ev.dates[0];
         var second = ev.dates[1];
 
-        var a = moment(first);
-        var b = moment(second);
-       // a.diff(b) // -1000-->geriye
-       // b.diff(a) // 1000
-
-       // console.log(a.diff(b), b.diff(a));
         var dates=enumerateDaysBetweenDates(first, second);
         new Date("2020/04/29 03:00").getTime();
 
         $.each(dates, function (index, value) {
-           // console.log(index + ": " + new Date(value).setHours(3));
-
             $('td[data-date=' + new Date(value).setHours(3)+']').addClass("selected");
         });
     }
+    
     
 });
 
